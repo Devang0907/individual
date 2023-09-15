@@ -2,7 +2,22 @@
 import java.util.*;
 
 public class industry {
-    
+    public static void main(String[] args) throws Exception
+
+	{   Class.forName("com.mysql.cj.jdbc.Driver");
+        System.out.println("driver loaded succesfully");
+
+		String url= "jdbc:mysql://localhost:3306/pro"; // table details
+			
+		String username = "root"; // MySQL credentials
+		String password = "";
+        Connection con = DriverManager.getConnection(url, username, password);
+
+        if(con!=null){
+            System.out.println("Connection Established successfully");
+        }
+		
+	}
 }
 
 class InventoryManager {
@@ -117,6 +132,10 @@ class QualityControl {
         // Perform quality inspection for the product
         return true; // or false if failed
     }
+}
+
+class FinanceManger{
+      
 }
 
 
